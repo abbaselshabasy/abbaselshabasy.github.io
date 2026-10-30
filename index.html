@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Abbas El Shabasy, MBA">
+<meta property="og:description" content="Corporate Director of Information & Technology. 25+ years of hospitality IT across Egypt and Tanzania.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://abbaselshabasy.github.io/">
+<meta property="og:image" content="https://abbaselshabasy.github.io/photo.jpg">
+<title>Abbas El Shabasy</title>
+<meta name="description" content="Abbas El Shabasy, MBA. Corporate Director of Information & Technology in hospitality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one calm column, sticky nav, sea-glass teal accent; the opening ledger and career rail carry the subject. */
+:root {
+  --bg: #F2F6F6;
+  --surface: #FFFFFF;
+  --ink: #14262B;
+  --muted: #566C71;
+  --line: #D4E0E1;
+  --accent: #1D6A73;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DFEDEE;
+  --sand: #9A7A3E;
+  --display: "Bricolage Grotesque", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: 1.55rem;
+  --step-3: clamp(1.9rem, 4vw, 2.6rem);
+  --step-4: clamp(2.4rem, 7vw, 4.4rem);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1618; --surface: #142124; --ink: #E2ECEC; --muted: #93A8AB; --line: #24373A;
+    --accent: #6CC0C7; --accent-ink: #0D1618; --accent-soft: #17323A; --sand: #D2B57A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1618; --surface: #142124; --ink: #E2ECEC; --muted: #93A8AB; --line: #24373A;
+  --accent: #6CC0C7; --accent-ink: #0D1618; --accent-soft: #17323A; --sand: #D2B57A;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: var(--step-0); line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+html[lang="ar"] body { line-height: 1.85; }
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { letter-spacing: 0; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* Nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 16px; min-height: 60px; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.nav { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+.nav a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 0.92rem; white-space: nowrap; }
+.nav a:hover { color: var(--ink); background: var(--accent-soft); }
+.lang-switch { flex: none; display: flex; border: 1px solid var(--accent); border-radius: 999px; padding: 2px; gap: 2px; direction: ltr; }
+.lang-switch button {
+  font: 600 0.82rem var(--body); cursor: pointer; border: 0; border-radius: 999px;
+  color: var(--accent); background: transparent; padding: 5px 11px; min-width: 40px;
+}
+.lang-switch button:hover { background: var(--accent-soft); }
+.lang-switch button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+@media (max-width: 640px) { .nav { display: none; } .topbar .wrap { justify-content: space-between; } }
+
+/* Hero */
+.hero { padding-block: 64px 40px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; }
+.status { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--accent); background: var(--accent-soft); padding: 4px 12px; border-radius: 999px; font-weight: 500; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.hero h1 { font-size: var(--step-4); line-height: 1.02; margin-top: 18px; font-weight: 700; }
+.hero h1 small { display: inline-block; font-size: 0.35em; font-family: var(--mono); color: var(--sand); vertical-align: super; margin-inline-start: 8px; letter-spacing: 0.06em; }
+.role { font-size: var(--step-1); font-weight: 600; margin-top: 10px; }
+.lede { color: var(--muted); font-size: 1.12rem; max-width: 58ch; margin-top: 14px; }
+.focus { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 18px; color: var(--muted); font-size: 0.9rem; }
+.focus span + span::before { content: "·"; margin-inline-end: 14px; color: var(--line); }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-ghost { border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+.btn:hover { filter: brightness(1.06); }
+.portrait { width: 220px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; padding: 6px; background: conic-gradient(from 200deg, var(--accent), var(--accent-soft), var(--sand), var(--accent)); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; border: 4px solid var(--bg); }
+@media (max-width: 760px) {
+  .hero { padding-block: 36px 24px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .portrait { order: -1; width: 128px; }
+}
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--line); margin-top: 8px; }
+.stat { padding: 20px 16px; border-inline-start: 1px solid var(--line); }
+.stat:first-child { border-inline-start: 0; padding-inline-start: 0; }
+.stat b { display: block; font-family: var(--display); font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; display: block; margin-top: 4px; }
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { border-inline-start: 0; border-top: 1px solid var(--line); padding-inline: 0 12px; }
+  .stat:nth-child(-n+2) { border-top: 0; }
+  .stat:last-child { grid-column: 1 / -1; }
+}
+
+/* Sections */
+section.block { padding-block: 72px 8px; }
+.eyebrow { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+html[lang="ar"] .eyebrow { font-family: var(--body); letter-spacing: 0; font-size: 0.9rem; font-weight: 600; }
+.block h2 { font-size: var(--step-3); margin-top: 6px; }
+.section-intro { color: var(--muted); max-width: 62ch; margin-top: 10px; }
+.block-body { margin-top: 32px; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; }
+.about-grid > * { min-width: 0; }
+.about-text p { font-size: 1.08rem; max-width: 62ch; }
+.impact { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px; }
+.impact li { padding-inline-start: 22px; position: relative; color: var(--ink); }
+.impact li::before { content: ""; position: absolute; inset-inline-start: 0; top: 0.7em; width: 10px; height: 2px; background: var(--accent); }
+.value { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; align-self: start; }
+.value h3 { font-size: 1.05rem; }
+.value ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 0; }
+.value li { padding: 10px 0; border-top: 1px solid var(--line); display: flex; gap: 12px; align-items: baseline; }
+.value li:first-child { border-top: 0; }
+.value li i { font-style: normal; font-family: var(--mono); font-size: 0.75rem; color: var(--sand); }
+@media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Experience timeline */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; top: 8px; bottom: 8px; inset-inline-start: 150px; width: 1px; background: var(--line); }
+.job { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 32px; padding-block: 18px; position: relative; }
+.job::after { content: ""; position: absolute; inset-inline-start: 145px; top: 26px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.job.current::after { background: var(--accent); }
+.job time { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); padding-top: 4px; font-variant-numeric: tabular-nums; direction: ltr; text-align: start; }
+html[lang="ar"] .job time { text-align: right; }
+.job-body { padding-inline-start: 4px; }
+.job h3 { font-size: 1.15rem; line-height: 1.35; }
+.job .org { color: var(--accent); font-weight: 500; font-size: 0.95rem; margin-top: 2px; }
+.job p { color: var(--muted); margin-top: 8px; max-width: 66ch; }
+@media (max-width: 640px) {
+  .timeline::before { inset-inline-start: 5px; }
+  .job { grid-template-columns: 1fr; padding-inline-start: 28px; }
+  .job::after { inset-inline-start: 0; top: 24px; }
+}
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.skill-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.skill-group h3 { font-size: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.chip { font-size: 0.85rem; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--ink); direction: ltr; unicode-bidi: isolate; }
+@media (max-width: 900px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .skills { grid-template-columns: 1fr; } }
+.langs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.lang-item { border-top: 2px solid var(--accent); padding-top: 10px; }
+.lang-item b { display: block; }
+.lang-item span { color: var(--muted); font-size: 0.9rem; }
+.meter { display: flex; gap: 4px; margin-top: 8px; }
+.meter i { width: 22px; height: 4px; border-radius: 2px; background: var(--line); }
+.meter i.on { background: var(--accent); }
+
+/* Certifications */
+.certs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.cert-col h3 { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+html[lang="ar"] .cert-col h3 { font-family: var(--body); letter-spacing: 0; font-size: 0.9rem; }
+.cert-col ul { list-style: none; padding: 0; margin: 12px 0 0; }
+.cert-col li { padding: 9px 0; border-top: 1px solid var(--line); font-weight: 500; direction: ltr; text-align: start; unicode-bidi: plaintext; }
+.cert-col li .abbr { font-family: var(--display); font-weight: 700; font-size: 1.05rem; }
+.edu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 40px; }
+.edu > div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; min-width: 0; }
+.edu h3 { font-size: 1rem; }
+.edu p { color: var(--muted); margin-top: 6px; font-size: 0.95rem; }
+@media (max-width: 900px) { .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .edu { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .certs { grid-template-columns: 1fr; } }
+
+/* Projects */
+.programs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.program { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+.program .tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sand); }
+html[lang="ar"] .program .tag { font-family: var(--body); letter-spacing: 0; font-size: 0.82rem; }
+.program h3 { font-size: 1.1rem; line-height: 1.3; }
+.program p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 900px) { .programs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .programs { grid-template-columns: 1fr; } }
+
+.ledger-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; margin-top: 56px; }
+.ledger-head h3 { font-size: 1.4rem; }
+.ledger-head p { color: var(--muted); font-size: 0.95rem; }
+.ledger { margin-top: 16px; border-top: 1px solid var(--ink); }
+.ledger-row { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.ledger-row .yr { font-family: var(--mono); font-size: 0.95rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+.ledger-row ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.ledger-row li { direction: ltr; unicode-bidi: isolate; }
+.ledger-row li em { font-style: normal; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); margin-left: 6px; }
+.ledger-row.pipeline { background: var(--accent-soft); border-radius: 0 0 var(--radius) var(--radius); padding-inline: 14px; border-bottom: 0; }
+.ledger-row.pipeline .yr { font-weight: 500; }
+@media (max-width: 560px) { .ledger-row { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Recommendations */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.quote { border: 1.5px dashed var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+.quote .mark { font-family: var(--display); font-size: 2.6rem; line-height: 0.6; color: var(--accent); height: 20px; }
+.quote p { color: var(--muted); font-style: italic; }
+.quote footer { margin-top: auto; font-size: 0.88rem; }
+.quote footer b { display: block; color: var(--ink); }
+.quote footer span { color: var(--muted); }
+.placeholder-tag { align-self: flex-start; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sand); border: 1px solid currentColor; border-radius: 4px; padding: 1px 6px; }
+html[lang="ar"] .placeholder-tag { letter-spacing: 0; }
+@media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact { margin-block: 80px 0; background: var(--accent); color: var(--accent-ink); }
+.contact .wrap { padding-block: 56px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.contact h2 { font-size: var(--step-3); }
+.contact .section-intro { color: inherit; opacity: 0.85; }
+.contact .eyebrow { color: inherit; opacity: 0.8; }
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.contact-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-radius: 10px; background: color-mix(in srgb, var(--accent-ink) 10%, transparent); min-width: 0; }
+.contact-list .k { font-size: 0.78rem; opacity: 0.8; display: block; }
+.contact-list .v { font-weight: 600; user-select: all; direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; }
+.contact-list > li > div { min-width: 0; }
+.copy { flex: none; font: 600 0.8rem var(--body); cursor: pointer; border: 1px solid currentColor; background: transparent; color: inherit; padding: 5px 12px; border-radius: 999px; }
+.copy:hover { background: var(--accent-ink); color: var(--accent); }
+@media (max-width: 760px) { .contact .wrap { grid-template-columns: 1fr; gap: 28px; } }
+.foot { padding-block: 24px; color: var(--muted); font-size: 0.85rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+</style>
+<style>body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Abbas <span>El Shabasy</span></a>
+    <nav class="nav" aria-label="Sections"><ul id="nav"></ul></nav>
+    <div class="lang-switch" role="group" aria-label="Language / Langue / اللغة">
+      <button type="button" id="lang-en" data-lang="en" lang="en">EN</button>
+      <button type="button" id="lang-fr" data-lang="fr" lang="fr">FR</button>
+      <button type="button" id="lang-ar" data-lang="ar" lang="ar">عربي</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="status" data-i18n="status"></span>
+          <h1><span data-i18n="name"></span><small>MBA</small></h1>
+          <p class="role" data-i18n="role"></p>
+          <p class="lede" data-i18n="lede"></p>
+          <div class="focus" id="focus"></div>
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact" data-i18n="ctaContact"></a>
+            <a class="btn btn-ghost" href="#experience" data-i18n="ctaExp"></a>
+          </div>
+        </div>
+        <div class="portrait"><img src="photo.jpg" alt="Abbas El Shabasy" width="520" height="520"></div>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="navAbout"></div>
+      <h2 data-i18n="aboutTitle"></h2>
+      <div class="block-body about-grid">
+        <div class="about-text">
+          <p data-i18n="profile"></p>
+          <ul class="impact" id="impact"></ul>
+        </div>
+        <aside class="value">
+          <h3 data-i18n="valueTitle"></h3>
+          <ul id="value"></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="navExp"></div>
+      <h2 data-i18n="expTitle"></h2>
+      <p class="section-intro" data-i18n="expIntro"></p>
+      <ol class="timeline block-body" id="timeline"></ol>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="navSkills"></div>
+      <h2 data-i18n="skillsTitle"></h2>
+      <p class="section-intro" data-i18n="skillsIntro"></p>
+      <div class="skills block-body" id="skillGroups"></div>
+      <div class="langs" id="langs"></div>
+    </div>
+  </section>
+
+  <section class="block" id="certifications">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="navCerts"></div>
+      <h2 data-i18n="certsTitle"></h2>
+      <div class="certs block-body" id="certs"></div>
+      <div class="edu" id="edu"></div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="navProjects"></div>
+      <h2 data-i18n="projectsTitle"></h2>
+      <p class="section-intro" data-i18n="projectsIntro"></p>
+      <div class="programs block-body" id="programs"></div>
+      <div class="ledger-head">
+        <h3 data-i18n="ledgerTitle"></h3>
+        <p data-i18n="ledgerNote"></p>
+      </div>
+      <div class="ledger" id="ledger"></div>
+    </div>
+  </section>
+
+  <section class="block" id="recommendations">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="navRecs"></div>
+      <h2 data-i18n="recsTitle"></h2>
+      <p class="section-intro" data-i18n="recsIntro"></p>
+      <div class="quotes block-body" id="quotes"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow" data-i18n="navContact"></div>
+        <h2 data-i18n="contactTitle"></h2>
+        <p class="section-intro" data-i18n="contactIntro"></p>
+      </div>
+      <ul class="contact-list" id="contactList"></ul>
+    </div>
+  </section>
+  <div class="wrap foot">
+    <span data-i18n="footName"></span>
+    <span data-i18n="footRefs"></span>
+  </div>
+</main>
+
+<script>
+// French is looked up by the English text, falling back to English for names and numbers.
+const L = (en, ar) => ({ en, ar, get fr() { return FR[en] ?? en; } });
+
+const FR = {
+  "Open to senior hospitality IT leadership roles": "Ouvert à des postes de direction IT dans l’hôtellerie",
+  "Corporate Director of Information & Technology": "Directeur corporate des systèmes d’information et de la technologie",
+  "25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, from opening day to every day after.": "25 ans à bâtir et faire tourner la technologie d’hôtels sur la mer Rouge, le Nil et Zanzibar, du jour de l’ouverture à chaque jour qui suit.",
+  "Get in touch": "Me contacter",
+  "See my experience": "Voir mon parcours",
+  "About": "À propos",
+  "Experience": "Expérience",
+  "Skills": "Compétences",
+  "Projects": "Projets",
+  "Recommendations": "Recommandations",
+  "Hospitality technology, run as a business": "La technologie hôtelière, pilotée comme une activité",
+  "Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality.": "Dirigeant de la technologie hôtelière avec plus de 25 ans d’expérience à la tête des opérations IT, de l’intégration des systèmes, de la modernisation des infrastructures et de la transformation numérique de grands groupes hôteliers multi-établissements. Je pilote les déploiements majeurs, les relations fournisseurs, les budgets IT, les ouvertures d’hôtels et les programmes technologiques destinés aux clients chez SUNRISE Resorts & Cruises, après des postes dans l’hôtellerie internationale.",
+  "What I bring": "Ce que j’apporte",
+  "Career experience": "Parcours professionnel",
+  "Seven roles across 29 years, most of them growing with one hotel group from IT Manager to the corporate seat beside the CEO.": "Sept postes en 29 ans, la plupart au sein d’un même groupe hôtelier, de responsable informatique jusqu’au poste corporate aux côtés du PDG.",
+  "Technology & hospitality systems": "Systèmes hôteliers et technologiques",
+  "The platforms I have selected, implemented, upgraded and kept running across hotels, cruises and offices.": "Les plateformes que j’ai choisies, déployées, mises à niveau et maintenues en service dans les hôtels, les bateaux de croisière et les bureaux.",
+  "Certifications & education": "Certifications et formation",
+  "Strategic technology programs": "Programmes technologiques stratégiques",
+  "Group-wide programs I led, plus the hotel openings and launches I took from empty building to live systems.": "Les programmes que j’ai menés à l’échelle du groupe, et les ouvertures d’hôtels que j’ai fait passer d’un bâtiment vide à des systèmes en service.",
+  "Hotel openings & major launches": "Ouvertures d’hôtels et lancements majeurs",
+  "15 delivered · 4 in progress for 2026 (1,646 rooms)": "15 livrés · 4 en cours pour 2026 (1 646 chambres)",
+  "What colleagues and partners say": "Ce qu’en disent collègues et partenaires",
+  "Recommendations from general managers, executives and technology partners will be published here.": "Les recommandations de directeurs généraux, de dirigeants et de partenaires technologiques seront publiées ici.",
+  "Let's talk about your next opening": "Parlons de votre prochaine ouverture",
+  "I'm open to corporate and regional IT leadership roles in hospitality. Copy any detail below to reach me.": "Je suis ouvert à des postes de direction IT, au niveau du groupe ou régional, dans l’hôtellerie. Copiez les coordonnées ci-dessous pour me joindre.",
+  "© 2026 Abbas El Shabasy · Hurghada, Egypt": "© 2026 Abbas El Shabasy · Hurghada, Égypte",
+  "References available upon request": "Références disponibles sur demande",
+  "Copy": "Copier",
+  "Copied": "Copié",
+  "Placeholder": "À remplacer",
+
+  "Hospitality IT strategy": "Stratégie IT hôtelière",
+  "Digital transformation": "Transformation numérique",
+  "Multi-property operations": "Opérations multi-établissements",
+  "Cybersecurity governance": "Gouvernance de la cybersécurité",
+
+  "years in hospitality IT": "ans dans l’IT hôtelière",
+  "hotels across Egypt & Tanzania": "hôtels en Égypte et en Tanzanie",
+  "hotel openings & launches": "ouvertures et lancements d’hôtels",
+  "professional certifications": "certifications professionnelles",
+  "largest program budget": "budget du plus grand programme",
+
+  "Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, a portfolio of 26 hotels across Egypt and Tanzania.": "Je dirige la stratégie IT et les opérations technologiques de SUNRISE Resorts & Cruises, un portefeuille de 26 hôtels en Égypte et en Tanzanie.",
+  "Managed complex IT programs with budgets up to GBP 2M / USD 2M+, balancing strict timelines, live operations and cost.": "J’ai géré des programmes IT complexes avec des budgets allant jusqu’à 2 M GBP / plus de 2 M USD, en conciliant délais serrés, exploitation en continu et maîtrise des coûts.",
+  "Directed large-scale PMS, material control, finance, payroll, data center, network, security and guest-service technology initiatives.": "J’ai piloté des projets d’envergure : PMS, gestion des stocks, finance, paie, data centers, réseaux, sécurité et technologies de service client.",
+  "Standardized digital processes: asset management, electronic CAPEX requests, archiving, digital signatures, discount forms and e-claims.": "J’ai standardisé les processus numériques : gestion des actifs, demandes CAPEX électroniques, archivage, signatures numériques, formulaires de remise et réclamations en ligne.",
+  "Supported openings, migrations and upgrades across the Red Sea, Sharm El Sheikh, Marsa Alam, Alexandria, Ain Sokhna, Luxor, Aswan and Tanzania.": "J’ai accompagné ouvertures, migrations et mises à niveau sur la mer Rouge, à Charm el-Cheikh, Marsa Alam, Alexandrie, Aïn Sokhna, Louxor, Assouan et en Tanzanie.",
+
+  "Multi-property IT governance": "Gouvernance IT multi-établissements",
+  "Hotel openings & migrations": "Ouvertures d’hôtels et migrations",
+  "PMS / POS / ERP transformation": "Transformation PMS / POS / ERP",
+  "Cybersecurity & infrastructure": "Cybersécurité et infrastructure",
+  "Guest experience platforms": "Plateformes d’expérience client",
+  "Vendor & budget management": "Gestion des fournisseurs et des budgets",
+
+  "2018 – Present": "2018 – aujourd’hui",
+  "Corporate Director of Information & Technologies": "Directeur corporate des systèmes d’information et des technologies",
+  "Reports to the CEO. Leads corporate technology across a multi-property portfolio: IT strategy, governance, transformation programs, vendor management, system implementation, service delivery, cybersecurity and operational continuity.": "Rattaché au PDG. Dirige la technologie du groupe sur un portefeuille multi-établissements : stratégie IT, gouvernance, programmes de transformation, gestion des fournisseurs, déploiement des systèmes, qualité de service, cybersécurité et continuité d’activité.",
+  "Regional Director of IT / Project Manager": "Directeur régional IT / chef de projet",
+  "Led regional IT projects, departmental coordination, executive training, application maintenance, infrastructure audits, ERP support and disaster-recovery planning.": "A mené les projets IT régionaux, la coordination entre départements, la formation des cadres, la maintenance applicative, les audits d’infrastructure, le support ERP et le plan de reprise après sinistre.",
+  "Regional IT Projects Manager": "Responsable régional des projets IT",
+  "Managed implementation planning, system design, user and role governance, application maintenance and project delivery across hotel operations.": "A géré la planification des déploiements, la conception des systèmes, la gouvernance des utilisateurs et des rôles, la maintenance applicative et la livraison des projets dans les hôtels.",
+  "Director of IT": "Directeur informatique",
+  "IT governance, infrastructure configuration, server administration, backup operations, IT staff management, documentation, budgeting and vendor relationships.": "Gouvernance IT, configuration de l’infrastructure, administration des serveurs, sauvegardes, encadrement de l’équipe IT, documentation, budget et relations fournisseurs.",
+  "IT Manager": "Responsable informatique",
+  "Managed IT staff, strengthened infrastructure, and ran the hardware and software lifecycle, audits, systems documentation, IT budgets, procurement and the internal network.": "A encadré l’équipe IT, renforcé l’infrastructure et géré le cycle de vie du matériel et des logiciels, les audits, la documentation, les budgets IT, les achats et le réseau interne.",
+  "Operation Manager / IT Support & Consulting Manager": "Directeur des opérations / responsable support et conseil IT",
+  "Supported hotel clients across administration, sales, business development, technical support, system configuration, network troubleshooting, application rollout, user setup and customer support.": "A accompagné des hôtels clients en administration, ventes, développement commercial, support technique, configuration des systèmes, dépannage réseau, déploiement d’applications, création des utilisateurs et support client.",
+  "Assistant IT Manager": "Responsable informatique adjoint",
+  "Supported critical hotel systems: PMS, call accounting, HSIA, PABX, POS, servers, desktops, VPN and Lotus Notes connectivity, and guest and conference IT.": "A assuré le support des systèmes hôteliers critiques : PMS, taxation téléphonique, HSIA, PABX, POS, serveurs, postes de travail, connexions VPN et Lotus Notes, et l’IT des clients et des conférences.",
+
+  "Property management": "Gestion hôtelière (PMS)",
+  "Point of sale & F&B": "Points de vente et restauration",
+  "Finance & back office": "Finance et back-office",
+  "Security & identity": "Sécurité et identité",
+  "Networks & infrastructure": "Réseaux et infrastructure",
+  "Data & cloud": "Données et cloud",
+  "Arabic": "Arabe",
+  "English": "Anglais",
+  "French": "Français",
+  "Mother tongue": "Langue maternelle",
+  "Fair": "Intermédiaire",
+
+  "Security & audit": "Sécurité et audit",
+  "Data": "Données",
+  "Service & delivery": "Gestion des services",
+  "Master of Business Administration": "Master en administration des affaires",
+  "Faculty of Commerce · 1992 – 1996": "Faculté de commerce · 1992 – 1996",
+  "Undergraduate degree in commerce": "Licence en commerce",
+  "Management training": "Formation au management",
+  "Leadership, time management, finance for non-finance managers, team building, training management and staff development.": "Leadership, gestion du temps, finance pour non-financiers, cohésion d’équipe, gestion de la formation et développement des collaborateurs.",
+
+  "Opera & Fidelio upgrades and migrations": "Mises à niveau et migrations Opera et Fidelio",
+  "Group-wide PMS upgrades and migrations, including Opera Cloud and Fidelio V8 environments.": "Mises à niveau et migrations PMS à l’échelle du groupe, y compris les environnements Opera Cloud et Fidelio V8.",
+  "SUN System on the web": "SUN System sur le web",
+  "SUN System 6 web access and a web-based Material Control foundation across hotels and Nile cruises.": "Accès web à SUN System 6 et socle Material Control en ligne pour les hôtels et les croisières sur le Nil.",
+  "Guest experience": "Expérience client",
+  "RSR restaurant self-reservation": "Réservation de restaurant en libre-service RSR",
+  "Touch-screen system that lets guests book restaurants themselves, in several languages.": "Bornes tactiles multilingues qui permettent aux clients de réserver eux-mêmes leur restaurant.",
+  "Corporate data centers": "Data centers du groupe",
+  "Coverage across Hurghada, Sharm El Sheikh, Cairo, Marsa Alam, Luxor, Alexandria and Tanzania.": "Couverture d’Hurghada, Charm el-Cheikh, Le Caire, Marsa Alam, Louxor, Alexandrie et la Tanzanie.",
+  "Network": "Réseau",
+  "One connected group": "Un groupe connecté",
+  "VPN and VoIP between SUNRISE hotels and branches, enabling centralized reservations and cluster operations.": "VPN et VoIP entre les hôtels et agences SUNRISE, pour une réservation centralisée et une exploitation en cluster.",
+  "Digital workflow": "Flux numériques",
+  "Paperless operations": "Opérations sans papier",
+  "Asset management, electronic CAPEX requests, digital signatures, archiving, employee survey, OCC, GSC, Let Us Know and e-claim systems.": "Gestion des actifs, demandes CAPEX électroniques, signatures numériques, archivage, enquête collaborateurs, systèmes OCC, GSC, Let Us Know et réclamations en ligne.",
+
+  "Add a short quote from a General Manager you supported through a hotel opening.": "Ajoutez une courte citation d’un directeur général accompagné lors d’une ouverture d’hôtel.",
+  "General Manager": "Directeur général",
+  "Hotel opening": "Ouverture d’hôtel",
+  "Add a short quote from an executive on IT strategy, budgets or governance.": "Ajoutez une courte citation d’un dirigeant sur la stratégie IT, les budgets ou la gouvernance.",
+  "Executive leadership": "Direction générale",
+  "Corporate office": "Siège du groupe",
+  "Add a short quote from a technology partner on a PMS, POS or network project.": "Ajoutez une courte citation d’un partenaire technologique sur un projet PMS, POS ou réseau.",
+  "Technology partner": "Partenaire technologique",
+  "Vendor project": "Projet fournisseur",
+
+  "Email": "E-mail",
+  "Email (alternate)": "E-mail (secondaire)",
+  "Phone / WhatsApp": "Téléphone / WhatsApp",
+  "Location": "Localisation",
+  "Hurghada, Egypt": "Hurghada, Égypte",
+};
+
+const LANG_NAMES = { en: "Switch to English", fr: "Passer en français", ar: "التبديل إلى العربية" };
+
+const UI = {
+  status: L("Open to senior hospitality IT leadership roles", "متاح لفرص قيادية جديدة في تقنية المعلومات الفندقية"),
+  name: L("Abbas El Shabasy", "عباس الشباسي"),
+  role: L("Corporate Director of Information & Technology", "مدير تقنية المعلومات على مستوى المجموعة"),
+  lede: L("25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, from opening day to every day after.",
+          "خمسة وعشرون عاماً في بناء وتشغيل التكنولوجيا خلف فنادق البحر الأحمر والنيل وزنجبار، من يوم الافتتاح وحتى كل يوم تشغيل بعده."),
+  ctaContact: L("Get in touch", "تواصل معي"),
+  ctaExp: L("See my experience", "اطّلع على خبراتي"),
+  navAbout: L("About", "نبذة"),
+  navExp: L("Experience", "الخبرات"),
+  navSkills: L("Skills", "المهارات"),
+  navCerts: L("Certifications", "الشهادات"),
+  navProjects: L("Projects", "المشاريع"),
+  navRecs: L("Recommendations", "آراء العملاء"),
+  navContact: L("Contact", "تواصل"),
+  aboutTitle: L("Hospitality technology, run as a business", "تكنولوجيا الضيافة تُدار بعقلية الأعمال"),
+  profile: L("Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality.",
+             "قيادي في تكنولوجيا الضيافة بخبرة تتجاوز 25 عاماً في إدارة عمليات تقنية المعلومات المؤسسية، وتكامل الأنظمة، وتحديث البنية التحتية، والتحول الرقمي عبر مجموعات فندقية كبيرة متعددة المنشآت. أدير التطبيقات الكبرى وعلاقات الموردين وموازنات تقنية المعلومات وافتتاح الفنادق وبرامج التكنولوجيا الموجهة للنزلاء في SUNRISE Resorts & Cruises، بعد أدوار سابقة في الضيافة الدولية."),
+  valueTitle: L("What I bring", "ما أقدّمه"),
+  expTitle: L("Career experience", "المسيرة المهنية"),
+  expIntro: L("Seven roles across 29 years, most of them growing with one hotel group from IT Manager to the corporate seat beside the CEO.",
+              "سبعة مناصب على مدى 29 عاماً، أغلبها مع مجموعة فندقية واحدة تدرّجتُ فيها من مدير قسم تقنية المعلومات حتى المنصب المؤسسي بجوار الرئيس التنفيذي."),
+  skillsTitle: L("Technology & hospitality systems", "الأنظمة الفندقية والتقنية"),
+  skillsIntro: L("The platforms I have selected, implemented, upgraded and kept running across hotels, cruises and offices.",
+                 "المنصات التي اخترتها ونفّذتها وطوّرتها وحافظت على تشغيلها في الفنادق والبواخر والمكاتب."),
+  certsTitle: L("Certifications & education", "الشهادات والتعليم"),
+  projectsTitle: L("Strategic technology programs", "برامج تقنية استراتيجية"),
+  projectsIntro: L("Group-wide programs I led, plus the hotel openings and launches I took from empty building to live systems.",
+                   "برامج على مستوى المجموعة قُدتها، إلى جانب افتتاحات الفنادق التي نقلتها من مبنى فارغ إلى أنظمة تعمل بالكامل."),
+  ledgerTitle: L("Hotel openings & major launches", "افتتاحات الفنادق والإطلاقات الكبرى"),
+  ledgerNote: L("15 delivered · 4 in progress for 2026 (1,646 rooms)", "15 افتتاحاً منجزاً · 4 قيد التنفيذ لعام 2026 (1,646 غرفة)"),
+  recsTitle: L("What colleagues and partners say", "ماذا يقول الزملاء والشركاء"),
+  recsIntro: L("Recommendations from general managers, executives and technology partners will be published here.",
+               "ستُنشر هنا توصيات من المديرين العامين والقيادات التنفيذية وشركاء التكنولوجيا."),
+  contactTitle: L("Let's talk about your next opening", "لنتحدث عن افتتاحك القادم"),
+  contactIntro: L("I'm open to corporate and regional IT leadership roles in hospitality. Copy any detail below to reach me.",
+                  "أرحّب بالفرص القيادية في تقنية المعلومات على مستوى المجموعات أو الأقاليم في قطاع الضيافة. انسخ أي بيانات أدناه للتواصل معي."),
+  footName: L("© 2026 Abbas El Shabasy · Hurghada, Egypt", "© 2026 عباس الشباسي · الغردقة، مصر"),
+  footRefs: L("References available upon request", "المراجع متاحة عند الطلب"),
+  copy: L("Copy", "نسخ"),
+  copied: L("Copied", "تم النسخ"),
+  placeholder: L("Placeholder", "مساحة مؤقتة"),
+  pipeline: L("2026", "2026"),
+  noYear: L("—", "—"),
+};
+
+const NAV = [["about","navAbout"],["experience","navExp"],["skills","navSkills"],["certifications","navCerts"],["projects","navProjects"],["recommendations","navRecs"],["contact","navContact"]];
+
+const FOCUS = [
+  L("Hospitality IT strategy", "استراتيجية تقنية المعلومات الفندقية"),
+  L("Digital transformation", "التحول الرقمي"),
+  L("Multi-property operations", "تشغيل الفنادق المتعددة"),
+  L("Cybersecurity governance", "حوكمة الأمن السيبراني"),
+];
+
+const STATS = [
+  ["25+", L("years in hospitality IT", "عاماً في تقنية المعلومات الفندقية")],
+  ["26", L("hotels across Egypt & Tanzania", "فندقاً في مصر وتنزانيا")],
+  ["19", L("hotel openings & launches", "افتتاحاً وإطلاقاً فندقياً")],
+  ["15", L("professional certifications", "شهادة مهنية")],
+  ["$2M+", L("largest program budget", "أكبر موازنة برنامج")],
+];
+
+const IMPACT = [
+  L("Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, a portfolio of 26 hotels across Egypt and Tanzania.",
+    "أقود استراتيجية تقنية المعلومات والعمليات التقنية لمجموعة SUNRISE Resorts & Cruises، بمحفظة تضم 26 فندقاً في مصر وتنزانيا."),
+  L("Managed complex IT programs with budgets up to GBP 2M / USD 2M+, balancing strict timelines, live operations and cost.",
+    "أدرت برامج تقنية معقدة بموازنات تصل إلى 2 مليون جنيه إسترليني / أكثر من 2 مليون دولار، مع موازنة الجداول الزمنية الصارمة والتشغيل الفعلي والتكلفة."),
+  L("Directed large-scale PMS, material control, finance, payroll, data center, network, security and guest-service technology initiatives.",
+    "وجّهتُ مبادرات واسعة النطاق في أنظمة إدارة الفنادق، ومراقبة المخزون، والمالية، والرواتب، ومراكز البيانات، والشبكات، والأمن، وخدمات النزلاء."),
+  L("Standardized digital processes: asset management, electronic CAPEX requests, archiving, digital signatures, discount forms and e-claims.",
+    "وحّدتُ الإجراءات الرقمية: إدارة الأصول، وطلبات المشروعات والنفقات الرأسمالية إلكترونياً، والأرشفة، والتوقيعات الرقمية، ونماذج الخصومات، والمطالبات الإلكترونية."),
+  L("Supported openings, migrations and upgrades across the Red Sea, Sharm El Sheikh, Marsa Alam, Alexandria, Ain Sokhna, Luxor, Aswan and Tanzania.",
+    "دعمتُ الافتتاحات وترحيل الأنظمة والترقيات في البحر الأحمر وشرم الشيخ ومرسى علم والإسكندرية والعين السخنة والأقصر وأسوان وتنزانيا."),
+];
+
+const VALUE = [
+  L("Multi-property IT governance", "حوكمة تقنية المعلومات لفنادق متعددة"),
+  L("Hotel openings & migrations", "افتتاح الفنادق وترحيل الأنظمة"),
+  L("PMS / POS / ERP transformation", "تحويل أنظمة PMS وPOS وERP"),
+  L("Cybersecurity & infrastructure", "الأمن السيبراني والبنية التحتية"),
+  L("Guest experience platforms", "منصات تجربة النزلاء"),
+  L("Vendor & budget management", "إدارة الموردين والموازنات"),
+];
+
+const JOBS = [
+  { y: L("2018 – Present", "2018 – الآن"), cur: true,
+    t: L("Corporate Director of Information & Technologies", "مدير تقنية المعلومات على مستوى المجموعة"),
+    o: "SUNRISE Resorts & Cruises",
+    d: L("Reports to the CEO. Leads corporate technology across a multi-property portfolio: IT strategy, governance, transformation programs, vendor management, system implementation, service delivery, cybersecurity and operational continuity.",
+         "يرفع تقاريره إلى الرئيس التنفيذي. يقود التكنولوجيا على مستوى المجموعة عبر محفظة فندقية متعددة: استراتيجية تقنية المعلومات، والحوكمة، وبرامج التحول، وإدارة الموردين، وتنفيذ الأنظمة، وتقديم الخدمات، والأمن السيبراني، واستمرارية التشغيل.") },
+  { y: L("2012 – 2017", "2012 – 2017"),
+    t: L("Regional Director of IT / Project Manager", "المدير الإقليمي لتقنية المعلومات / مدير مشروعات"),
+    o: "SUNRISE Resorts & Cruises",
+    d: L("Led regional IT projects, departmental coordination, executive training, application maintenance, infrastructure audits, ERP support and disaster-recovery planning.",
+         "قاد مشروعات تقنية المعلومات الإقليمية، والتنسيق بين الإدارات، وتدريب القيادات، وصيانة التطبيقات، وتدقيق البنية التحتية، ودعم أنظمة ERP، وتخطيط التعافي من الكوارث.") },
+  { y: L("2010 – 2012", "2010 – 2012"),
+    t: L("Regional IT Projects Manager", "مدير مشروعات تقنية المعلومات الإقليمي"),
+    o: "SUNRISE Resorts & Cruises",
+    d: L("Managed implementation planning, system design, user and role governance, application maintenance and project delivery across hotel operations.",
+         "أدار تخطيط التنفيذ، وتصميم الأنظمة، وحوكمة المستخدمين والصلاحيات، وصيانة التطبيقات، وتسليم المشروعات عبر عمليات الفنادق.") },
+  { y: L("2007 – 2009", "2007 – 2009"),
+    t: L("Director of IT", "مدير تقنية المعلومات"),
+    o: "SUNRISE Resorts & Cruises",
+    d: L("IT governance, infrastructure configuration, server administration, backup operations, IT staff management, documentation, budgeting and vendor relationships.",
+         "حوكمة تقنية المعلومات، وتهيئة البنية التحتية، وإدارة الخوادم، وعمليات النسخ الاحتياطي، وإدارة فريق العمل، والتوثيق، والموازنات، وعلاقات الموردين.") },
+  { y: L("2003 – 2007", "2003 – 2007"),
+    t: L("IT Manager", "مدير قسم تقنية المعلومات"),
+    o: "SUNRISE Resorts & Cruises",
+    d: L("Managed IT staff, strengthened infrastructure, and ran the hardware and software lifecycle, audits, systems documentation, IT budgets, procurement and the internal network.",
+         "أدار فريق تقنية المعلومات، وعزّز البنية التحتية، وتولّى دورة حياة الأجهزة والبرمجيات، والتدقيق، وتوثيق الأنظمة، والموازنات، والمشتريات، والشبكة الداخلية.") },
+  { y: L("2001 – 2003", "2001 – 2003"),
+    t: L("Operation Manager / IT Support & Consulting Manager", "مدير العمليات / مدير الدعم الفني والاستشارات"),
+    o: "HSC / CITE Company",
+    d: L("Supported hotel clients across administration, sales, business development, technical support, system configuration, network troubleshooting, application rollout, user setup and customer support.",
+         "دعم الفنادق العملاء في الإدارة والمبيعات وتطوير الأعمال والدعم الفني وتهيئة الأنظمة وحل مشكلات الشبكات وإطلاق التطبيقات وإعداد المستخدمين وخدمة العملاء.") },
+  { y: L("1997 – 2000", "1997 – 2000"),
+    t: L("Assistant IT Manager", "مساعد مدير تقنية المعلومات"),
+    o: "Conrad International, Hurghada",
+    d: L("Supported critical hotel systems: PMS, call accounting, HSIA, PABX, POS, servers, desktops, VPN and Lotus Notes connectivity, and guest and conference IT.",
+         "دعم الأنظمة الفندقية الحيوية: نظام إدارة الفندق PMS، ومحاسبة المكالمات، والإنترنت عالي السرعة HSIA، والسنترال PABX، ونقاط البيع POS، والخوادم، وأجهزة المكاتب، واتصال VPN وLotus Notes، ودعم النزلاء والمؤتمرات.") },
+];
+
+const SKILLS = [
+  [L("Property management", "أنظمة إدارة الفنادق"), ["Opera Cloud", "Opera On-Prem", "Fidelio Suite 8", "Shiji Daylight PMS", "Eptera PMS", "Eektera PMS", "Kwantra"]],
+  [L("Point of sale & F&B", "نقاط البيع والأغذية والمشروبات"), ["Micros POS 4700", "Micros 8700", "Micros 9700", "Symphony"]],
+  [L("Finance & back office", "المالية والمكاتب الخلفية"), ["SUN System 6", "Material Control", "Payroll", "Call Accounting"]],
+  [L("Security & identity", "الأمن والهوية"), ["FortiGate", "FortiMail", "Active Directory", "Exchange", "VingCard", "Onity", "Inhova"]],
+  [L("Networks & infrastructure", "الشبكات والبنية التحتية"), ["UTP / FTP / STP / SFTP", "Fiber", "VPN", "VoIP", "Wireless", "Data centers"]],
+  [L("Data & cloud", "البيانات والسحابة"), ["Power BI", "AWS", "Cloud", "Office 365", "VMware"]],
+];
+
+const LANGS = [
+  [L("Arabic", "العربية"), L("Mother tongue", "اللغة الأم"), 5],
+  [L("English", "الإنجليزية"), L("Excellent", "ممتاز"), 4],
+  [L("French", "الفرنسية"), L("Fair", "مقبول"), 2],
+];
+
+const CERTS = [
+  [L("Security & audit", "الأمن والتدقيق"), ["CISSP", "CISM", "CISA", "CCSP", "CSSLP", "CCNA Security"]],
+  [L("Cloud", "السحابة"), ["Architecting on Amazon Web Services", "VMware Certified Cloud Professional", "Cloud Computing Technology Fundamentals", "Cloud Computing for Business / IT Professionals"]],
+  [L("Data", "البيانات"), ["Data Analytics with Microsoft Power BI", "Certified Big Data Fundamentals / Operations / Strategy"]],
+  [L("Service & delivery", "الخدمة والتسليم"), ["ITIL V3 Foundation", "Enabling Office 365 Services", "Domain-driven Design"]],
+];
+
+const EDU = [
+  [L("MBA · 2025", "ماجستير إدارة الأعمال MBA · 2025"), L("Master of Business Administration", "ماجستير في إدارة الأعمال")],
+  [L("Faculty of Commerce · 1992 – 1996", "كلية التجارة · 1992 – 1996"), L("Undergraduate degree in commerce", "درجة البكالوريوس في التجارة")],
+  [L("Management training", "التدريب الإداري"), L("Leadership, time management, finance for non-finance managers, team building, training management and staff development.", "القيادة، وإدارة الوقت، والمالية لغير الماليين، وبناء الفرق، وإدارة التدريب، وتطوير الموظفين.")],
+];
+
+const PROGRAMS = [
+  [L("PMS", "إدارة الفنادق"), L("Opera & Fidelio upgrades and migrations", "ترقية وترحيل أنظمة Opera وFidelio"),
+   L("Group-wide PMS upgrades and migrations, including Opera Cloud and Fidelio V8 environments.", "ترقيات وترحيل أنظمة إدارة الفنادق على مستوى المجموعة، بما فيها بيئات Opera Cloud وFidelio V8.")],
+  [L("Finance", "المالية"), L("SUN System on the web", "نظام SUN System عبر الويب"),
+   L("SUN System 6 web access and a web-based Material Control foundation across hotels and Nile cruises.", "إتاحة SUN System 6 عبر الويب وتأسيس نظام Material Control على الويب في الفنادق والبواخر النيلية.")],
+  [L("Guest experience", "تجربة النزلاء"), L("RSR restaurant self-reservation", "نظام RSR للحجز الذاتي في المطاعم"),
+   L("Touch-screen system that lets guests book restaurants themselves, in several languages.", "نظام بشاشات لمس يتيح للنزلاء حجز المطاعم بأنفسهم بعدة لغات.")],
+  [L("Infrastructure", "البنية التحتية"), L("Corporate data centers", "مراكز البيانات المؤسسية"),
+   L("Coverage across Hurghada, Sharm El Sheikh, Cairo, Marsa Alam, Luxor, Alexandria and Tanzania.", "تغطية الغردقة وشرم الشيخ والقاهرة ومرسى علم والأقصر والإسكندرية وتنزانيا.")],
+  [L("Network", "الشبكات"), L("One connected group", "مجموعة واحدة متصلة"),
+   L("VPN and VoIP between SUNRISE hotels and branches, enabling centralized reservations and cluster operations.", "ربط فنادق وفروع SUNRISE عبر VPN وVoIP لتمكين الحجز المركزي والتشغيل العنقودي.")],
+  [L("Digital workflow", "الأتمتة الرقمية"), L("Paperless operations", "تشغيل بلا أوراق"),
+   L("Asset management, electronic CAPEX requests, digital signatures, archiving, employee survey, OCC, GSC, Let Us Know and e-claim systems.", "إدارة الأصول، وطلبات النفقات الرأسمالية إلكترونياً، والتوقيعات الرقمية، والأرشفة، واستبيان الموظفين، وأنظمة OCC وGSC وLet Us Know والمطالبات الإلكترونية.")],
+];
+
+const OPENINGS = [
+  ["2007", ["SUNRISE Mamlouk Palace"]],
+  ["2010", ["SENTIDO Crystal Bay"]],
+  ["2012", ["SUNRISE Arabian Beach Resort"]],
+  ["2014", ["SUNRISE Grand Select Montemare"]],
+  [null, ["SUNRISE Romance Sahl Hasheesh"]],
+  ["2019", ["SUNRISE Alex Avenue", "SUNRISE Remal Resort & Remal Beach", "Tanoak Hotel Ain El Sokhna"]],
+  ["2022", ["Meraki Resorts / Meraki Sharm", "White Hills Hotel"]],
+  ["2023", ["Kwanza Hotel by SUNRISE Zanzibar", "SUNRISE Alma Bay"]],
+  ["2024", ["SUNRISE Anjum Marsa Alam"]],
+  ["2025", ["SUNRISE Alora Aqua Park", "SUNRISE Solara Aqua Park"]],
+];
+const PIPELINE = [["Azalya", 595], ["Serano & Serano Club", 569], ["Juman Hotels", 378], ["Makadi Boutique", 104]];
+
+const QUOTES = [
+  [L("Add a short quote from a General Manager you supported through a hotel opening.", "أضف اقتباساً قصيراً من مدير عام دعمته خلال افتتاح فندق."), L("General Manager", "مدير عام"), L("Hotel opening", "افتتاح فندق")],
+  [L("Add a short quote from an executive on IT strategy, budgets or governance.", "أضف اقتباساً قصيراً من أحد القيادات التنفيذية عن الاستراتيجية أو الموازنات أو الحوكمة."), L("Executive leadership", "القيادة التنفيذية"), L("Corporate office", "الإدارة العامة")],
+  [L("Add a short quote from a technology partner on a PMS, POS or network project.", "أضف اقتباساً قصيراً من شريك تقني عن مشروع PMS أو POS أو شبكات."), L("Technology partner", "شريك تقني"), L("Vendor project", "مشروع مع مورّد")],
+];
+
+const CONTACT = [
+  [L("Email", "البريد الإلكتروني"), "abbas.elshabasy@gmail.com"],
+  [L("Email (alternate)", "بريد إلكتروني بديل"), "abbas.elshabasy@hotmail.com"],
+  [L("Phone / WhatsApp", "الهاتف"), "+20 100 466 6750"],
+  [L("Location", "الموقع"), L("Hurghada, Egypt", "الغردقة، مصر")],
+];
+
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const $ = id => document.getElementById(id);
+const pick = (v, lang) => (v && typeof v === "object" && "en" in v) ? v[lang] : v;
+
+function render(lang) {
+  const t = k => UI[k][lang];
+  const root = document.documentElement;
+  root.lang = lang;
+  root.dir = lang === "ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+
+  document.querySelectorAll(".lang-switch button").forEach(b => {
+    b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+    b.title = LANG_NAMES[b.dataset.lang];
+  });
+
+  $("nav").innerHTML = NAV.map(([id, k]) => `<li><a href="#${id}">${esc(t(k))}</a></li>`).join("");
+  $("focus").innerHTML = FOCUS.map(f => `<span>${esc(f[lang])}</span>`).join("");
+  $("stats").innerHTML = STATS.map(([n, l]) => `<div class="stat"><b dir="ltr">${esc(n)}</b><span>${esc(l[lang])}</span></div>`).join("");
+  $("impact").innerHTML = IMPACT.map(i => `<li>${esc(i[lang])}</li>`).join("");
+  $("value").innerHTML = VALUE.map((v, i) => `<li><i>0${i + 1}</i><span>${esc(v[lang])}</span></li>`).join("");
+
+  $("timeline").innerHTML = JOBS.map(j => `
+    <li class="job${j.cur ? " current" : ""}">
+      <time>${esc(j.y[lang])}</time>
+      <div class="job-body">
+        <h3>${esc(j.t[lang])}</h3>
+        <div class="org" dir="auto">${esc(j.o)}</div>
+        <p>${esc(j.d[lang])}</p>
+      </div>
+    </li>`).join("");
+
+  $("skillGroups").innerHTML = SKILLS.map(([h, items]) => `
+    <div class="skill-group"><h3>${esc(h[lang])}</h3>
+      <div class="chips">${items.map(s => `<span class="chip">${esc(s)}</span>`).join("")}</div>
+    </div>`).join("");
+  $("langs").innerHTML = LANGS.map(([n, lv, score]) => `
+    <div class="lang-item"><b>${esc(n[lang])}</b><span>${esc(lv[lang])}</span>
+      <div class="meter" aria-hidden="true">${[1,2,3,4,5].map(i => `<i class="${i <= score ? "on" : ""}"></i>`).join("")}</div>
+    </div>`).join("");
+
+  $("certs").innerHTML = CERTS.map(([h, items]) => `
+    <div class="cert-col"><h3>${esc(h[lang])}</h3>
+      <ul>${items.map(c => `<li>${/^[A-Z ]+$/.test(c) ? `<span class="abbr">${esc(c)}</span>` : esc(c)}</li>`).join("")}</ul>
+    </div>`).join("");
+  $("edu").innerHTML = EDU.map(([h, p]) => `<div><h3>${esc(h[lang])}</h3><p>${esc(p[lang])}</p></div>`).join("");
+
+  $("programs").innerHTML = PROGRAMS.map(([tag, h, p]) => `
+    <article class="program"><span class="tag">${esc(tag[lang])}</span><h3>${esc(h[lang])}</h3><p>${esc(p[lang])}</p></article>`).join("");
+
+  const roomsWord = { en: "rooms", fr: "chambres", ar: "غرفة" }[lang];
+  const inProgress = { en: "in progress", fr: "en cours", ar: "قيد التنفيذ" }[lang];
+  $("ledger").innerHTML = OPENINGS.map(([y, names]) => `
+    <div class="ledger-row"><span class="yr">${esc(y || t("noYear"))}</span>
+      <ul>${names.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>`).join("") + `
+    <div class="ledger-row pipeline"><span class="yr">2026 · ${inProgress}</span>
+      <ul>${PIPELINE.map(([n, r]) => `<li>${esc(n)}<em>${r} ${roomsWord}</em></li>`).join("")}</ul></div>`;
+
+  $("quotes").innerHTML = QUOTES.map(([q, who, where]) => `
+    <figure class="quote" style="margin:0">
+      <span class="placeholder-tag">${esc(t("placeholder"))}</span>
+      <div class="mark" aria-hidden="true">“</div>
+      <p>${esc(q[lang])}</p>
+      <footer><b>${esc(who[lang])}</b><span>${esc(where[lang])}</span></footer>
+    </figure>`).join("");
+
+  $("contactList").innerHTML = CONTACT.map(([k, v], i) => {
+    const val = pick(v, lang);
+    const copyable = i < 3;
+    return `<li><div><span class="k">${esc(k[lang])}</span><span class="v">${esc(val)}</span></div>${
+      copyable ? `<button type="button" class="copy" id="copy-${i}" data-v="${esc(val)}">${esc(t("copy"))}</button>` : ""}</li>`;
+  }).join("");
+  document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
+    const done = () => { b.textContent = t("copied"); setTimeout(() => { b.textContent = t("copy"); }, 1600); };
+    const fallback = () => {
+      const v = b.parentElement.querySelector(".v");
+      const r = document.createRange(); r.selectNodeContents(v);
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    };
+    try { navigator.clipboard.writeText(b.dataset.v).then(done, fallback); } catch (e) { fallback(); }
+  }));
+}
+
+const LANGS_OK = ["en", "fr", "ar"];
+let lang = "en";
+try { lang = localStorage.getItem("cv-lang") || "en"; } catch (e) {}
+const fromHash = location.hash.slice(1);
+if (LANGS_OK.includes(fromHash)) lang = fromHash;
+if (!LANGS_OK.includes(lang)) lang = "en";
+render(lang);
+document.querySelectorAll(".lang-switch button").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem("cv-lang", lang); } catch (e) {}
+  render(lang);
+}));
+</script>
+
+</body>
+</html>
