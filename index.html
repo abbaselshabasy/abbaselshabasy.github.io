@@ -91,6 +91,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 }
 .lang-switch button:hover { background: var(--accent-soft); }
 .lang-switch button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+@media (max-width: 420px) { .lang-switch button { padding: 5px 7px; min-width: 32px; } .brand { font-size: 0.95rem; } }
+html[lang="de"] .stat span, html[lang="de"] .skill-group h3, html[lang="de"] .program h3 { hyphens: auto; overflow-wrap: break-word; }
 @media (max-width: 640px) { .nav { display: none; } .topbar .wrap { justify-content: space-between; } }
 
 /* Hero */
@@ -259,9 +261,10 @@ html[lang="ar"] .placeholder-tag { letter-spacing: 0; }
   <div class="wrap">
     <a class="brand" href="#top">Abbas <span>El Shabasy</span></a>
     <nav class="nav" aria-label="Sections"><ul id="nav"></ul></nav>
-    <div class="lang-switch" role="group" aria-label="Language / Langue / اللغة">
+    <div class="lang-switch" role="group" aria-label="Language / Langue / Sprache / اللغة">
       <button type="button" id="lang-en" data-lang="en" lang="en">EN</button>
       <button type="button" id="lang-fr" data-lang="fr" lang="fr">FR</button>
+      <button type="button" id="lang-de" data-lang="de" lang="de">DE</button>
       <button type="button" id="lang-ar" data-lang="ar" lang="ar">عربي</button>
     </div>
   </div>
@@ -373,8 +376,8 @@ html[lang="ar"] .placeholder-tag { letter-spacing: 0; }
 </main>
 
 <script>
-// French is looked up by the English text, falling back to English for names and numbers.
-const L = (en, ar) => ({ en, ar, get fr() { return FR[en] ?? en; } });
+// French and German are looked up by the English text, falling back to English for names and numbers.
+const L = (en, ar) => ({ en, ar, get fr() { return FR[en] ?? en; }, get de() { return DE[en] ?? en; } });
 
 const FR = {
   "Open to senior hospitality IT leadership roles": "Ouvert à des postes de direction IT dans l’hôtellerie",
@@ -503,7 +506,137 @@ const FR = {
   "Hurghada, Egypt": "Hurghada, Égypte",
 };
 
-const LANG_NAMES = { en: "Switch to English", fr: "Passer en français", ar: "التبديل إلى العربية" };
+const DE = {
+  "Open to senior hospitality IT leadership roles": "Offen für IT-Führungspositionen in der Hotellerie",
+  "Corporate Director of Information & Technology": "Corporate Director IT & Technologie",
+  "25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, from opening day to every day after.": "25 Jahre Aufbau und Betrieb der Technologie hinter Hotels am Roten Meer, am Nil und auf Sansibar, vom Eröffnungstag bis zu jedem Tag danach.",
+  "Get in touch": "Kontakt aufnehmen",
+  "See my experience": "Meinen Werdegang ansehen",
+  "About": "Über mich",
+  "Experience": "Erfahrung",
+  "Skills": "Kompetenzen",
+  "Certifications": "Zertifizierungen",
+  "Projects": "Projekte",
+  "Recommendations": "Empfehlungen",
+  "Contact": "Kontakt",
+  "Hospitality technology, run as a business": "Hoteltechnologie, unternehmerisch geführt",
+  "Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality.": "Erfahrene Führungskraft für Hoteltechnologie mit über 25 Jahren Verantwortung für IT-Betrieb, Systemintegration, Modernisierung der Infrastruktur und digitale Transformation in großen Hotelgruppen mit vielen Häusern. Bei SUNRISE Resorts & Cruises verantworte ich große Implementierungen, Lieferantenbeziehungen, IT-Budgets, Hoteleröffnungen und Technologieprogramme für Gäste, nach früheren Stationen in der internationalen Hotellerie.",
+  "What I bring": "Was ich mitbringe",
+  "Career experience": "Beruflicher Werdegang",
+  "Seven roles across 29 years, most of them growing with one hotel group from IT Manager to the corporate seat beside the CEO.": "Sieben Positionen in 29 Jahren, die meisten in derselben Hotelgruppe, vom IT-Manager bis zur Konzernfunktion direkt an der Seite des CEO.",
+  "Technology & hospitality systems": "Technologie- und Hotelsysteme",
+  "The platforms I have selected, implemented, upgraded and kept running across hotels, cruises and offices.": "Die Plattformen, die ich in Hotels, auf Kreuzfahrtschiffen und in Büros ausgewählt, eingeführt, aktualisiert und am Laufen gehalten habe.",
+  "Certifications & education": "Zertifizierungen und Ausbildung",
+  "Strategic technology programs": "Strategische Technologieprogramme",
+  "Group-wide programs I led, plus the hotel openings and launches I took from empty building to live systems.": "Konzernweite Programme, die ich geleitet habe, und Hoteleröffnungen, die ich vom leeren Gebäude bis zu laufenden Systemen begleitet habe.",
+  "Hotel openings & major launches": "Hoteleröffnungen und große Launches",
+  "15 delivered · 4 in progress for 2026 (1,646 rooms)": "15 abgeschlossen · 4 in Umsetzung für 2026 (1.646 Zimmer)",
+  "What colleagues and partners say": "Was Kollegen und Partner sagen",
+  "Recommendations from general managers, executives and technology partners will be published here.": "Hier werden Empfehlungen von General Managern, Führungskräften und Technologiepartnern veröffentlicht.",
+  "Let's talk about your next opening": "Sprechen wir über Ihre nächste Eröffnung",
+  "I'm open to corporate and regional IT leadership roles in hospitality. Copy any detail below to reach me.": "Ich bin offen für IT-Führungspositionen auf Konzern- oder Regionalebene in der Hotellerie. Kopieren Sie die Kontaktdaten unten, um mich zu erreichen.",
+  "© 2026 Abbas El Shabasy · Hurghada, Egypt": "© 2026 Abbas El Shabasy · Hurghada, Ägypten",
+  "References available upon request": "Referenzen auf Anfrage",
+  "Copy": "Kopieren",
+  "Copied": "Kopiert",
+  "Placeholder": "Platzhalter",
+
+  "Hospitality IT strategy": "IT-Strategie für die Hotellerie",
+  "Digital transformation": "Digitale Transformation",
+  "Multi-property operations": "Betrieb mehrerer Häuser",
+  "Cybersecurity governance": "Cybersecurity-Governance",
+
+  "years in hospitality IT": "Jahre in der Hotel-IT",
+  "hotels across Egypt & Tanzania": "Hotels in Ägypten und Tansania",
+  "hotel openings & launches": "Hoteleröffnungen und Launches",
+  "professional certifications": "Fachzertifizierungen",
+  "largest program budget": "größtes Programmbudget",
+
+  "Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, a portfolio of 26 hotels across Egypt and Tanzania.": "Verantwortlich für IT-Strategie und Technologiebetrieb von SUNRISE Resorts & Cruises, einem Portfolio von 26 Hotels in Ägypten und Tansania.",
+  "Managed complex IT programs with budgets up to GBP 2M / USD 2M+, balancing strict timelines, live operations and cost.": "Komplexe IT-Programme mit Budgets bis zu 2 Mio. GBP / über 2 Mio. USD geleitet, bei engen Zeitplänen, laufendem Betrieb und klarer Kostenkontrolle.",
+  "Directed large-scale PMS, material control, finance, payroll, data center, network, security and guest-service technology initiatives.": "Große Initiativen für PMS, Materialwirtschaft, Finanzen, Lohnabrechnung, Rechenzentren, Netzwerke, Sicherheit und Gästeservice-Technologie gesteuert.",
+  "Standardized digital processes: asset management, electronic CAPEX requests, archiving, digital signatures, discount forms and e-claims.": "Digitale Prozesse standardisiert: Asset-Management, elektronische CAPEX-Anträge, Archivierung, digitale Signaturen, Rabattformulare und E-Claims.",
+  "Supported openings, migrations and upgrades across the Red Sea, Sharm El Sheikh, Marsa Alam, Alexandria, Ain Sokhna, Luxor, Aswan and Tanzania.": "Eröffnungen, Migrationen und Upgrades am Roten Meer, in Sharm El Sheikh, Marsa Alam, Alexandria, Ain Sokhna, Luxor, Assuan und Tansania begleitet.",
+
+  "Multi-property IT governance": "IT-Governance für mehrere Häuser",
+  "Hotel openings & migrations": "Hoteleröffnungen und Migrationen",
+  "PMS / POS / ERP transformation": "PMS-, POS- und ERP-Transformation",
+  "Cybersecurity & infrastructure": "Cybersecurity und Infrastruktur",
+  "Guest experience platforms": "Plattformen für das Gästeerlebnis",
+  "Vendor & budget management": "Lieferanten- und Budgetmanagement",
+
+  "2018 – Present": "2018 – heute",
+  "Corporate Director of Information & Technologies": "Corporate Director IT & Technologie",
+  "Reports to the CEO. Leads corporate technology across a multi-property portfolio: IT strategy, governance, transformation programs, vendor management, system implementation, service delivery, cybersecurity and operational continuity.": "Berichtet direkt an den CEO. Leitet die Konzerntechnologie für ein Portfolio vieler Häuser: IT-Strategie, Governance, Transformationsprogramme, Lieferantenmanagement, Systemeinführungen, Servicebereitstellung, Cybersecurity und Betriebskontinuität.",
+  "Regional Director of IT / Project Manager": "Regionaler IT-Direktor / Projektmanager",
+  "Led regional IT projects, departmental coordination, executive training, application maintenance, infrastructure audits, ERP support and disaster-recovery planning.": "Leitete regionale IT-Projekte, die abteilungsübergreifende Koordination, Schulungen für Führungskräfte, Anwendungswartung, Infrastruktur-Audits, ERP-Support und die Notfallplanung.",
+  "Regional IT Projects Manager": "Regionaler Manager für IT-Projekte",
+  "Managed implementation planning, system design, user and role governance, application maintenance and project delivery across hotel operations.": "Verantwortete Implementierungsplanung, Systemdesign, Benutzer- und Rollen-Governance, Anwendungswartung und Projektabwicklung im Hotelbetrieb.",
+  "Director of IT": "IT-Direktor",
+  "IT governance, infrastructure configuration, server administration, backup operations, IT staff management, documentation, budgeting and vendor relationships.": "IT-Governance, Infrastrukturkonfiguration, Serveradministration, Datensicherung, Führung des IT-Teams, Dokumentation, Budgetierung und Lieferantenbeziehungen.",
+  "IT Manager": "IT-Manager",
+  "Managed IT staff, strengthened infrastructure, and ran the hardware and software lifecycle, audits, systems documentation, IT budgets, procurement and the internal network.": "Führte das IT-Team, stärkte die Infrastruktur und verantwortete den Hardware- und Software-Lebenszyklus, Audits, Systemdokumentation, IT-Budgets, Einkauf und das interne Netzwerk.",
+  "Operation Manager / IT Support & Consulting Manager": "Operations Manager / Leiter IT-Support und Beratung",
+  "Supported hotel clients across administration, sales, business development, technical support, system configuration, network troubleshooting, application rollout, user setup and customer support.": "Betreute Hotelkunden in Verwaltung, Vertrieb, Geschäftsentwicklung, technischem Support, Systemkonfiguration, Netzwerk-Fehlerbehebung, Anwendungs-Rollouts, Benutzereinrichtung und Kundenservice.",
+  "Assistant IT Manager": "Stellvertretender IT-Manager",
+  "Supported critical hotel systems: PMS, call accounting, HSIA, PABX, POS, servers, desktops, VPN and Lotus Notes connectivity, and guest and conference IT.": "Betreute kritische Hotelsysteme: PMS, Gebührenerfassung, HSIA, PABX, POS, Server, Arbeitsplätze, VPN- und Lotus-Notes-Anbindung sowie die IT für Gäste und Konferenzen.",
+
+  "Property management": "Hotelverwaltung (PMS)",
+  "Point of sale & F&B": "Kassensysteme und F&B",
+  "Finance & back office": "Finanzen und Backoffice",
+  "Security & identity": "Sicherheit und Identität",
+  "Networks & infrastructure": "Netzwerke und Infrastruktur",
+  "Data & cloud": "Daten und Cloud",
+  "Arabic": "Arabisch",
+  "English": "Englisch",
+  "French": "Französisch",
+  "Mother tongue": "Muttersprache",
+  "Excellent": "Sehr gut",
+  "Fair": "Mittel",
+
+  "Security & audit": "Sicherheit und Audit",
+  "Data": "Daten",
+  "Service & delivery": "Service-Management",
+  "Faculty of Commerce · 1992 – 1996": "Wirtschaftswissenschaftliche Fakultät · 1992 – 1996",
+  "Undergraduate degree in commerce": "Bachelor in Handelswissenschaften",
+  "Management training": "Managementtrainings",
+  "Leadership, time management, finance for non-finance managers, team building, training management and staff development.": "Führung, Zeitmanagement, Finanzen für Nicht-Finanzfachleute, Teambuilding, Trainingsmanagement und Mitarbeiterentwicklung.",
+
+  "Finance": "Finanzen",
+  "Opera & Fidelio upgrades and migrations": "Upgrades und Migrationen von Opera und Fidelio",
+  "Group-wide PMS upgrades and migrations, including Opera Cloud and Fidelio V8 environments.": "Konzernweite PMS-Upgrades und -Migrationen, einschließlich Opera Cloud und Fidelio V8.",
+  "SUN System on the web": "SUN System im Web",
+  "SUN System 6 web access and a web-based Material Control foundation across hotels and Nile cruises.": "Webzugang zu SUN System 6 und eine webbasierte Material-Control-Plattform für Hotels und Nilkreuzfahrten.",
+  "Guest experience": "Gästeerlebnis",
+  "RSR restaurant self-reservation": "RSR-Restaurant-Selbstreservierung",
+  "Touch-screen system that lets guests book restaurants themselves, in several languages.": "Mehrsprachiges Touchscreen-System, mit dem Gäste Restaurants selbst reservieren.",
+  "Infrastructure": "Infrastruktur",
+  "Corporate data centers": "Konzern-Rechenzentren",
+  "Coverage across Hurghada, Sharm El Sheikh, Cairo, Marsa Alam, Luxor, Alexandria and Tanzania.": "Abdeckung von Hurghada, Sharm El Sheikh, Kairo, Marsa Alam, Luxor, Alexandria und Tansania.",
+  "Network": "Netzwerk",
+  "One connected group": "Eine vernetzte Gruppe",
+  "VPN and VoIP between SUNRISE hotels and branches, enabling centralized reservations and cluster operations.": "VPN und VoIP zwischen SUNRISE-Hotels und Niederlassungen für zentrale Reservierung und Cluster-Betrieb.",
+  "Digital workflow": "Digitale Workflows",
+  "Paperless operations": "Papierloser Betrieb",
+  "Asset management, electronic CAPEX requests, digital signatures, archiving, employee survey, OCC, GSC, Let Us Know and e-claim systems.": "Asset-Management, elektronische CAPEX-Anträge, digitale Signaturen, Archivierung, Mitarbeiterbefragung sowie die Systeme OCC, GSC, Let Us Know und E-Claims.",
+
+  "Add a short quote from a General Manager you supported through a hotel opening.": "Hier ein kurzes Zitat eines General Managers einfügen, der bei einer Hoteleröffnung unterstützt wurde.",
+  "Hotel opening": "Hoteleröffnung",
+  "Add a short quote from an executive on IT strategy, budgets or governance.": "Hier ein kurzes Zitat einer Führungskraft zu IT-Strategie, Budgets oder Governance einfügen.",
+  "Executive leadership": "Geschäftsleitung",
+  "Corporate office": "Konzernzentrale",
+  "Add a short quote from a technology partner on a PMS, POS or network project.": "Hier ein kurzes Zitat eines Technologiepartners zu einem PMS-, POS- oder Netzwerkprojekt einfügen.",
+  "Technology partner": "Technologiepartner",
+  "Vendor project": "Lieferantenprojekt",
+
+  "Email": "E-Mail",
+  "Email (alternate)": "E-Mail (alternativ)",
+  "Phone / WhatsApp": "Telefon / WhatsApp",
+  "Location": "Standort",
+  "Hurghada, Egypt": "Hurghada, Ägypten",
+};
+
+const LANG_NAMES = { en: "Switch to English", fr: "Passer en français", de: "Auf Deutsch wechseln", ar: "التبديل إلى العربية" };
 
 const UI = {
   status: L("Open to senior hospitality IT leadership roles", "متاح لفرص قيادية جديدة في تقنية المعلومات الفندقية"),
@@ -748,8 +881,8 @@ function render(lang) {
   $("programs").innerHTML = PROGRAMS.map(([tag, h, p]) => `
     <article class="program"><span class="tag">${esc(tag[lang])}</span><h3>${esc(h[lang])}</h3><p>${esc(p[lang])}</p></article>`).join("");
 
-  const roomsWord = { en: "rooms", fr: "chambres", ar: "غرفة" }[lang];
-  const inProgress = { en: "in progress", fr: "en cours", ar: "قيد التنفيذ" }[lang];
+  const roomsWord = { en: "rooms", fr: "chambres", de: "Zimmer", ar: "غرفة" }[lang];
+  const inProgress = { en: "in progress", fr: "en cours", de: "in Umsetzung", ar: "قيد التنفيذ" }[lang];
   $("ledger").innerHTML = OPENINGS.map(([y, names]) => `
     <div class="ledger-row"><span class="yr">${esc(y || t("noYear"))}</span>
       <ul>${names.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>`).join("") + `
@@ -781,7 +914,7 @@ function render(lang) {
   }));
 }
 
-const LANGS_OK = ["en", "fr", "ar"];
+const LANGS_OK = ["en", "fr", "de", "ar"];
 let lang = "en";
 try { lang = localStorage.getItem("cv-lang") || "en"; } catch (e) {}
 const fromHash = location.hash.slice(1);
