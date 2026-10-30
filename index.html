@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="Abbas El Shabasy, MBA">
-<meta property="og:description" content="Corporate Director of Information & Technology. 25+ years of hospitality IT across Egypt and Tanzania.">
+<meta property="og:description" content="Corporate Director of Information & Technology. 25+ years of hospitality IT across Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://abbaselshabasy.github.io/">
 <meta property="og:image" content="https://abbaselshabasy.github.io/photo.jpg">
@@ -120,16 +120,19 @@ html[lang="de"] .stat span, html[lang="de"] .skill-group h3, html[lang="de"] .pr
 }
 
 /* Stats */
-.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--line); margin-top: 8px; }
+.stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-block: 1px solid var(--line); margin-top: 8px; }
 .stat { padding: 20px 16px; border-inline-start: 1px solid var(--line); }
 .stat:first-child { border-inline-start: 0; padding-inline-start: 0; }
 .stat b { display: block; font-family: var(--display); font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .stat span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; display: block; margin-top: 4px; }
-@media (max-width: 760px) {
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 1000px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .stat { border-inline-start: 0; border-top: 1px solid var(--line); padding-inline: 0 12px; }
-  .stat:nth-child(-n+2) { border-top: 0; }
-  .stat:last-child { grid-column: 1 / -1; }
+  .stat:nth-child(-n+3) { border-top: 0; }
+}
+@media (max-width: 560px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { border-top: 1px solid var(--line); }
 }
 
 /* Sections */
@@ -382,7 +385,7 @@ const L = (en, ar) => ({ en, ar, get fr() { return FR[en] ?? en; }, get de() { r
 const FR = {
   "Open to senior hospitality IT leadership roles": "Ouvert à des postes de direction IT dans l’hôtellerie",
   "Corporate Director of Information & Technology": "Directeur corporate des systèmes d’information et de la technologie",
-  "25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, from opening day to every day after.": "25 ans à bâtir et faire tourner la technologie d’hôtels sur la mer Rouge, le Nil et Zanzibar, du jour de l’ouverture à chaque jour qui suit.",
+  "25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, and in Greece, Morocco, Saudi Arabia and Turkey.": "25 ans à bâtir et faire tourner la technologie d’hôtels sur la mer Rouge, le Nil et à Zanzibar, ainsi qu’en Grèce, au Maroc, en Arabie saoudite et en Turquie.",
   "Get in touch": "Me contacter",
   "See my experience": "Voir mon parcours",
   "About": "À propos",
@@ -391,7 +394,7 @@ const FR = {
   "Projects": "Projets",
   "Recommendations": "Recommandations",
   "Hospitality technology, run as a business": "La technologie hôtelière, pilotée comme une activité",
-  "Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality.": "Dirigeant de la technologie hôtelière avec plus de 25 ans d’expérience à la tête des opérations IT, de l’intégration des systèmes, de la modernisation des infrastructures et de la transformation numérique de grands groupes hôteliers multi-établissements. Je pilote les déploiements majeurs, les relations fournisseurs, les budgets IT, les ouvertures d’hôtels et les programmes technologiques destinés aux clients chez SUNRISE Resorts & Cruises, après des postes dans l’hôtellerie internationale.",
+  "Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality. My work covers hotels in Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.": "Dirigeant de la technologie hôtelière avec plus de 25 ans d’expérience à la tête des opérations IT, de l’intégration des systèmes, de la modernisation des infrastructures et de la transformation numérique de grands groupes hôteliers multi-établissements. Je pilote les déploiements majeurs, les relations fournisseurs, les budgets IT, les ouvertures d’hôtels et les programmes technologiques destinés aux clients chez SUNRISE Resorts & Cruises, après des postes dans l’hôtellerie internationale. Mon périmètre couvre des hôtels en Égypte, en Tanzanie, en Grèce, au Maroc, en Arabie saoudite et en Turquie.",
   "What I bring": "Ce que j’apporte",
   "Career experience": "Parcours professionnel",
   "Seven roles across 29 years, most of them growing with one hotel group from IT Manager to the corporate seat beside the CEO.": "Sept postes en 29 ans, la plupart au sein d’un même groupe hôtelier, de responsable informatique jusqu’au poste corporate aux côtés du PDG.",
@@ -419,11 +422,12 @@ const FR = {
 
   "years in hospitality IT": "ans dans l’IT hôtelière",
   "hotels across Egypt & Tanzania": "hôtels en Égypte et en Tanzanie",
+  "countries, from Morocco to Saudi Arabia": "pays, du Maroc à l’Arabie saoudite",
   "hotel openings & launches": "ouvertures et lancements d’hôtels",
   "professional certifications": "certifications professionnelles",
   "largest program budget": "budget du plus grand programme",
 
-  "Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, a portfolio of 26 hotels across Egypt and Tanzania.": "Je dirige la stratégie IT et les opérations technologiques de SUNRISE Resorts & Cruises, un portefeuille de 26 hôtels en Égypte et en Tanzanie.",
+  "Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, with hotels across Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.": "Je dirige la stratégie IT et les opérations technologiques de SUNRISE Resorts & Cruises, avec des hôtels en Égypte, en Tanzanie, en Grèce, au Maroc, en Arabie saoudite et en Turquie.",
   "Managed complex IT programs with budgets up to GBP 2M / USD 2M+, balancing strict timelines, live operations and cost.": "J’ai géré des programmes IT complexes avec des budgets allant jusqu’à 2 M GBP / plus de 2 M USD, en conciliant délais serrés, exploitation en continu et maîtrise des coûts.",
   "Directed large-scale PMS, material control, finance, payroll, data center, network, security and guest-service technology initiatives.": "J’ai piloté des projets d’envergure : PMS, gestion des stocks, finance, paie, data centers, réseaux, sécurité et technologies de service client.",
   "Standardized digital processes: asset management, electronic CAPEX requests, archiving, digital signatures, discount forms and e-claims.": "J’ai standardisé les processus numériques : gestion des actifs, demandes CAPEX électroniques, archivage, signatures numériques, formulaires de remise et réclamations en ligne.",
@@ -509,7 +513,7 @@ const FR = {
 const DE = {
   "Open to senior hospitality IT leadership roles": "Offen für IT-Führungspositionen in der Hotellerie",
   "Corporate Director of Information & Technology": "Corporate Director IT & Technologie",
-  "25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, from opening day to every day after.": "25 Jahre Aufbau und Betrieb der Technologie hinter Hotels am Roten Meer, am Nil und auf Sansibar, vom Eröffnungstag bis zu jedem Tag danach.",
+  "25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, and in Greece, Morocco, Saudi Arabia and Turkey.": "25 Jahre Aufbau und Betrieb der Technologie hinter Hotels am Roten Meer, am Nil und auf Sansibar sowie in Griechenland, Marokko, Saudi-Arabien und der Türkei.",
   "Get in touch": "Kontakt aufnehmen",
   "See my experience": "Meinen Werdegang ansehen",
   "About": "Über mich",
@@ -520,7 +524,7 @@ const DE = {
   "Recommendations": "Empfehlungen",
   "Contact": "Kontakt",
   "Hospitality technology, run as a business": "Hoteltechnologie, unternehmerisch geführt",
-  "Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality.": "Erfahrene Führungskraft für Hoteltechnologie mit über 25 Jahren Verantwortung für IT-Betrieb, Systemintegration, Modernisierung der Infrastruktur und digitale Transformation in großen Hotelgruppen mit vielen Häusern. Bei SUNRISE Resorts & Cruises verantworte ich große Implementierungen, Lieferantenbeziehungen, IT-Budgets, Hoteleröffnungen und Technologieprogramme für Gäste, nach früheren Stationen in der internationalen Hotellerie.",
+  "Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality. My work covers hotels in Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.": "Erfahrene Führungskraft für Hoteltechnologie mit über 25 Jahren Verantwortung für IT-Betrieb, Systemintegration, Modernisierung der Infrastruktur und digitale Transformation in großen Hotelgruppen mit vielen Häusern. Bei SUNRISE Resorts & Cruises verantworte ich große Implementierungen, Lieferantenbeziehungen, IT-Budgets, Hoteleröffnungen und Technologieprogramme für Gäste, nach früheren Stationen in der internationalen Hotellerie. Mein Verantwortungsbereich umfasst Hotels in Ägypten, Tansania, Griechenland, Marokko, Saudi-Arabien und der Türkei.",
   "What I bring": "Was ich mitbringe",
   "Career experience": "Beruflicher Werdegang",
   "Seven roles across 29 years, most of them growing with one hotel group from IT Manager to the corporate seat beside the CEO.": "Sieben Positionen in 29 Jahren, die meisten in derselben Hotelgruppe, vom IT-Manager bis zur Konzernfunktion direkt an der Seite des CEO.",
@@ -548,11 +552,12 @@ const DE = {
 
   "years in hospitality IT": "Jahre in der Hotel-IT",
   "hotels across Egypt & Tanzania": "Hotels in Ägypten und Tansania",
+  "countries, from Morocco to Saudi Arabia": "Länder, von Marokko bis Saudi-Arabien",
   "hotel openings & launches": "Hoteleröffnungen und Launches",
   "professional certifications": "Fachzertifizierungen",
   "largest program budget": "größtes Programmbudget",
 
-  "Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, a portfolio of 26 hotels across Egypt and Tanzania.": "Verantwortlich für IT-Strategie und Technologiebetrieb von SUNRISE Resorts & Cruises, einem Portfolio von 26 Hotels in Ägypten und Tansania.",
+  "Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, with hotels across Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.": "Verantwortlich für IT-Strategie und Technologiebetrieb von SUNRISE Resorts & Cruises, mit Hotels in Ägypten, Tansania, Griechenland, Marokko, Saudi-Arabien und der Türkei.",
   "Managed complex IT programs with budgets up to GBP 2M / USD 2M+, balancing strict timelines, live operations and cost.": "Komplexe IT-Programme mit Budgets bis zu 2 Mio. GBP / über 2 Mio. USD geleitet, bei engen Zeitplänen, laufendem Betrieb und klarer Kostenkontrolle.",
   "Directed large-scale PMS, material control, finance, payroll, data center, network, security and guest-service technology initiatives.": "Große Initiativen für PMS, Materialwirtschaft, Finanzen, Lohnabrechnung, Rechenzentren, Netzwerke, Sicherheit und Gästeservice-Technologie gesteuert.",
   "Standardized digital processes: asset management, electronic CAPEX requests, archiving, digital signatures, discount forms and e-claims.": "Digitale Prozesse standardisiert: Asset-Management, elektronische CAPEX-Anträge, Archivierung, digitale Signaturen, Rabattformulare und E-Claims.",
@@ -642,8 +647,8 @@ const UI = {
   status: L("Open to senior hospitality IT leadership roles", "متاح لفرص قيادية جديدة في تقنية المعلومات الفندقية"),
   name: L("Abbas El Shabasy", "عباس الشباسي"),
   role: L("Corporate Director of Information & Technology", "مدير تقنية المعلومات على مستوى المجموعة"),
-  lede: L("25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, from opening day to every day after.",
-          "خمسة وعشرون عاماً في بناء وتشغيل التكنولوجيا خلف فنادق البحر الأحمر والنيل وزنجبار، من يوم الافتتاح وحتى كل يوم تشغيل بعده."),
+  lede: L("25 years building and running the technology behind hotels on the Red Sea, the Nile and Zanzibar, and in Greece, Morocco, Saudi Arabia and Turkey.",
+          "خمسة وعشرون عاماً في بناء وتشغيل التكنولوجيا خلف فنادق البحر الأحمر والنيل وزنجبار، وفي اليونان والمغرب والسعودية وتركيا."),
   ctaContact: L("Get in touch", "تواصل معي"),
   ctaExp: L("See my experience", "اطّلع على خبراتي"),
   navAbout: L("About", "نبذة"),
@@ -654,8 +659,8 @@ const UI = {
   navRecs: L("Recommendations", "آراء العملاء"),
   navContact: L("Contact", "تواصل"),
   aboutTitle: L("Hospitality technology, run as a business", "تكنولوجيا الضيافة تُدار بعقلية الأعمال"),
-  profile: L("Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality.",
-             "قيادي في تكنولوجيا الضيافة بخبرة تتجاوز 25 عاماً في إدارة عمليات تقنية المعلومات المؤسسية، وتكامل الأنظمة، وتحديث البنية التحتية، والتحول الرقمي عبر مجموعات فندقية كبيرة متعددة المنشآت. أدير التطبيقات الكبرى وعلاقات الموردين وموازنات تقنية المعلومات وافتتاح الفنادق وبرامج التكنولوجيا الموجهة للنزلاء في SUNRISE Resorts & Cruises، بعد أدوار سابقة في الضيافة الدولية."),
+  profile: L("Senior hospitality technology executive with 25+ years leading enterprise IT operations, systems integration, infrastructure modernization and digital transformation across large multi-property hotel groups. I manage major implementations, vendor relationships, IT budgets, hotel openings and guest-facing technology programs for SUNRISE Resorts & Cruises, after earlier roles in international hospitality. My work covers hotels in Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.",
+             "قيادي في تكنولوجيا الضيافة بخبرة تتجاوز 25 عاماً في إدارة عمليات تقنية المعلومات المؤسسية، وتكامل الأنظمة، وتحديث البنية التحتية، والتحول الرقمي عبر مجموعات فندقية كبيرة متعددة المنشآت. أدير التطبيقات الكبرى وعلاقات الموردين وموازنات تقنية المعلومات وافتتاح الفنادق وبرامج التكنولوجيا الموجهة للنزلاء في SUNRISE Resorts & Cruises، بعد أدوار سابقة في الضيافة الدولية. ويشمل عملي فنادق في مصر وتنزانيا واليونان والمغرب والسعودية وتركيا."),
   valueTitle: L("What I bring", "ما أقدّمه"),
   expTitle: L("Career experience", "المسيرة المهنية"),
   expIntro: L("Seven roles across 29 years, most of them growing with one hotel group from IT Manager to the corporate seat beside the CEO.",
@@ -696,14 +701,15 @@ const FOCUS = [
 const STATS = [
   ["25+", L("years in hospitality IT", "عاماً في تقنية المعلومات الفندقية")],
   ["26", L("hotels across Egypt & Tanzania", "فندقاً في مصر وتنزانيا")],
+  ["6", L("countries, from Morocco to Saudi Arabia", "دول، من المغرب إلى السعودية")],
   ["19", L("hotel openings & launches", "افتتاحاً وإطلاقاً فندقياً")],
   ["15", L("professional certifications", "شهادة مهنية")],
   ["$2M+", L("largest program budget", "أكبر موازنة برنامج")],
 ];
 
 const IMPACT = [
-  L("Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, a portfolio of 26 hotels across Egypt and Tanzania.",
-    "أقود استراتيجية تقنية المعلومات والعمليات التقنية لمجموعة SUNRISE Resorts & Cruises، بمحفظة تضم 26 فندقاً في مصر وتنزانيا."),
+  L("Lead corporate IT strategy and technology operations for SUNRISE Resorts & Cruises, with hotels across Egypt, Tanzania, Greece, Morocco, Saudi Arabia and Turkey.",
+    "أقود استراتيجية تقنية المعلومات والعمليات التقنية لمجموعة SUNRISE Resorts & Cruises، بفنادق في مصر وتنزانيا واليونان والمغرب والسعودية وتركيا."),
   L("Managed complex IT programs with budgets up to GBP 2M / USD 2M+, balancing strict timelines, live operations and cost.",
     "أدرت برامج تقنية معقدة بموازنات تصل إلى 2 مليون جنيه إسترليني / أكثر من 2 مليون دولار، مع موازنة الجداول الزمنية الصارمة والتشغيل الفعلي والتكلفة."),
   L("Directed large-scale PMS, material control, finance, payroll, data center, network, security and guest-service technology initiatives.",
