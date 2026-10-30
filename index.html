@@ -25,6 +25,8 @@
   --accent-ink: #FFFFFF;
   --accent-soft: #DFEDEE;
   --sand: #9A7A3E;
+  --qr-bg: #FFFFFF; /* the code stays dark-on-white in both themes so every scanner reads it */
+  --qr-fg: #14262B;
   --display: "Bricolage Grotesque", "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
   --body: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -114,10 +116,21 @@ html[lang="ru"] .stat span, html[lang="ru"] .skill-group h3, html[lang="ru"] .pr
 .btn:hover { filter: brightness(1.06); }
 .portrait { width: 220px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; padding: 6px; background: conic-gradient(from 200deg, var(--accent), var(--accent-soft), var(--sand), var(--accent)); }
 .portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; border: 4px solid var(--bg); }
+.hero-side { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.qr-card { margin: 0; display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; padding-inline-end: 16px; }
+.qr { flex: none; width: 92px; height: 92px; padding: 5px; border-radius: 8px; background: var(--qr-bg); }
+.qr svg { display: block; width: 100%; height: 100%; }
+.qr-card figcaption { max-width: 124px; font-size: 0.82rem; line-height: 1.35; }
+.qr-card figcaption span { display: block; font-weight: 600; }
+.qr-card figcaption small { display: block; margin-top: 4px; color: var(--muted); font-size: 0.72rem; direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; }
 @media (max-width: 760px) {
   .hero { padding-block: 36px 24px; }
   .hero-grid { grid-template-columns: 1fr; gap: 24px; }
-  .portrait { order: -1; width: 128px; }
+  .hero-side { order: -1; flex-direction: row; justify-content: space-between; align-items: center; gap: 16px; }
+  .portrait { width: 116px; }
+  .qr-card { flex-direction: column; text-align: center; padding: 10px; gap: 6px; }
+  .qr { width: 84px; height: 84px; }
+  .qr-card figcaption { max-width: 110px; }
 }
 
 /* Stats */
@@ -290,7 +303,13 @@ html[lang="ar"] .placeholder-tag { letter-spacing: 0; }
             <a class="btn btn-ghost" href="#experience" data-i18n="ctaExp"></a>
           </div>
         </div>
-        <div class="portrait"><img src="photo.jpg" alt="Abbas El Shabasy" width="520" height="520"></div>
+        <div class="hero-side">
+          <div class="portrait"><img src="photo.jpg" alt="Abbas El Shabasy" width="520" height="520"></div>
+          <figure class="qr-card">
+            <div class="qr" id="qr" role="img" aria-label="QR code: https://abbaselshabasy.github.io/"></div>
+            <figcaption><span data-i18n="qrScan"></span><small>abbaselshabasy.github.io</small></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="stats" id="stats"></div>
     </div>
@@ -380,6 +399,7 @@ html[lang="ar"] .placeholder-tag { letter-spacing: 0; }
   </div>
 </main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
 // French, German and Russian are looked up by the English text, falling back to English for names and numbers.
 const L = (en, ar) => ({ en, ar, get fr() { return FR[en] ?? en; }, get de() { return DE[en] ?? en; }, get ru() { return RU[en] ?? en; } });
@@ -416,6 +436,7 @@ const FR = {
   "Copy": "Copier",
   "Copied": "Copié",
   "Placeholder": "À remplacer",
+  "Scan to open this site": "Scannez pour ouvrir ce site",
 
   "Hospitality IT strategy": "Stratégie IT hôtelière",
   "Digital transformation": "Transformation numérique",
@@ -546,6 +567,7 @@ const DE = {
   "Copy": "Kopieren",
   "Copied": "Kopiert",
   "Placeholder": "Platzhalter",
+  "Scan to open this site": "Scannen, um die Seite zu öffnen",
 
   "Hospitality IT strategy": "IT-Strategie für die Hotellerie",
   "Digital transformation": "Digitale Transformation",
@@ -677,6 +699,7 @@ const RU = {
   "Copy": "Копировать",
   "Copied": "Скопировано",
   "Placeholder": "Пример",
+  "Scan to open this site": "Отсканируйте, чтобы открыть сайт",
 
   "Hospitality IT strategy": "ИТ-стратегия в гостиничном бизнесе",
   "Digital transformation": "Цифровая трансформация",
@@ -821,6 +844,7 @@ const UI = {
   copy: L("Copy", "نسخ"),
   copied: L("Copied", "تم النسخ"),
   placeholder: L("Placeholder", "مساحة مؤقتة"),
+  qrScan: L("Scan to open this site", "امسح الرمز لفتح الموقع"),
   pipeline: L("2026", "2026"),
   noYear: L("—", "—"),
 };
@@ -1056,6 +1080,21 @@ function render(lang) {
   }));
 }
 
+const SITE_URL = "https://abbaselshabasy.github.io/";
+
+// Draws the QR code as SVG; without the library the URL under it is still readable.
+function drawQR() {
+  const el = $("qr");
+  if (!window.qrcode) { el.hidden = true; return; }
+  const q = qrcode(0, "M");
+  q.addData(SITE_URL);
+  q.make();
+  const n = q.getModuleCount();
+  let d = "";
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) d += `M${c} ${r}h1v1h-1z`;
+  el.innerHTML = `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" aria-hidden="true"><path d="${d}" fill="var(--qr-fg)"/></svg>`;
+}
+
 const LANGS_OK = ["en", "fr", "de", "ru", "ar"];
 let lang = "en";
 try { lang = localStorage.getItem("cv-lang") || "en"; } catch (e) {}
@@ -1063,6 +1102,7 @@ const fromHash = location.hash.slice(1);
 if (LANGS_OK.includes(fromHash)) lang = fromHash;
 if (!LANGS_OK.includes(lang)) lang = "en";
 render(lang);
+drawQR();
 document.querySelectorAll(".lang-switch button").forEach(b => b.addEventListener("click", () => {
   lang = b.dataset.lang;
   try { localStorage.setItem("cv-lang", lang); } catch (e) {}
